@@ -10,25 +10,41 @@
 </body>
 <script>
 
-    function saveOutput(func, magicWord) {
-        const password = magicWord;
-        const resultLog = {};
-        const inner = (num) => {
-            if (num === password) {
-                return resultLog
-            } else {
-                resultLog[num] = func(num)
-                return func(num)
-            }
+    function a() {
+        let n = 1;
+        function b() {
+            return n
         }
-        return inner;
+        return b
     }
-    function display(data) {
-        console.log(data)
-    }
-    const futureData = fetch('https://c.open.163.com/open/mob/ip/getInfo.do')
-    futureData.then(display)
-    console.log("Me first")
+
+    const myFun = a();
+    console.log(myFun());
+    // function printHello() {
+    //     console.log("Hello")
+    // }
+
+    // setTimeout(printHello, 1000);
+    // console.log("Me first");
+    // function saveOutput(func, magicWord) {
+    //     const password = magicWord;
+    //     const resultLog = {};
+    //     const inner = (num) => {
+    //         if (num === password) {
+    //             return resultLog
+    //         } else {
+    //             resultLog[num] = func(num)
+    //             return func(num)
+    //         }
+    //     }
+    //     return inner;
+    // }
+    // function display(data) {
+    //     console.log(data)
+    // }
+    // const futureData = fetch('https://c.open.163.com/open/mob/ip/getInfo.do')
+    // futureData.then(display)
+    // console.log("Me first")
     // /*** Uncomment these to check your work! ***/
     // const multiplyBy2 = function (num) { return num * 2; };
     // const multBy2AndLog = saveOutput(multiplyBy2, 'boo');
@@ -86,11 +102,6 @@
     // const myfunction = outer();
     // myfunction();
     // myfunction();
-
-
-
-
-
     // function outer(callbackFunc) {
     //     let counter = 0;
     //     const inner = () => {
